@@ -67,6 +67,17 @@
     }
   },
   {
+    "record": "accounting-7",
+    "availableFrom": 3,
+    "kind": "period",
+    "payload": {
+      "serviceMonth": "2026-10",
+      "closed": true,
+      "acceptingMonth": "2026-11",
+      "closingDay": "2026-10-31"
+    }
+  },
+  {
     "record": "accounting-6",
     "availableFrom": 4,
     "kind": "claim",
