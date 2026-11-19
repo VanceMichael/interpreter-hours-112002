@@ -1,0 +1,11 @@
+{
+  "sources": [
+    "crew",
+    "stations",
+    "accounting"
+  ],
+  "stages": 4,
+  "originals": [],
+  "originalStages": {},
+  "digests": {}
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "record": "stations-1",
+    "availableFrom": 1,
+    "kind": "service",
+    "payload": {
+      "consultation": "CN1",
+      "train": "T5",
+      "county": "北县",
+      "window": [
+        "10:10",
+        "10:35"
+      ],
+      "revision": 1
+    }
+  },
+  {
+    "record": "stations-2",
+    "availableFrom": 1,
+    "kind": "service",
+    "payload": {
+      "consultation": "CN2",
+      "train": "T5",
+      "county": "南县",
+      "window": [
+        "10:27",
+        "10:55"
+      ],
+      "revision": 1
+    }
+  },
+  {
+    "record": "stations-3",
+    "availableFrom": 3,
+    "kind": "service",
+    "payload": {
+      "consultation": "CN1",
+      "train": "T5",
+      "county": "桥县",
+      "window": [
+        "10:10",
+        "10:25"
+      ],
+      "revision": 2
+    }
+  }
+]

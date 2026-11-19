@@ -1,0 +1,50 @@
+[
+  {
+    "record": "crew-1",
+    "availableFrom": 1,
+    "kind": "checkin",
+    "payload": {
+      "evidence": "C1",
+      "shift": "V2",
+      "person": "I-73",
+      "train": "T5",
+      "actual": [
+        "10:10",
+        "10:40"
+      ],
+      "role": "主译"
+    }
+  },
+  {
+    "record": "crew-2",
+    "availableFrom": 2,
+    "kind": "checkin",
+    "payload": {
+      "evidence": "C2",
+      "shift": "V2",
+      "person": "I-73",
+      "train": "T5",
+      "actual": [
+        "10:25",
+        "10:48"
+      ],
+      "role": "复核"
+    }
+  },
+  {
+    "record": "crew-3",
+    "availableFrom": 3,
+    "kind": "checkin",
+    "payload": {
+      "evidence": "C3",
+      "shift": "V3",
+      "person": "I-94",
+      "train": "T5",
+      "actual": [
+        "10:30",
+        "10:50"
+      ],
+      "role": "主译"
+    }
+  }
+]

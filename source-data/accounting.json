@@ -1,0 +1,83 @@
+[
+  {
+    "record": "accounting-1",
+    "availableFrom": 1,
+    "kind": "roster",
+    "payload": {
+      "shift": "V2",
+      "person": "I-73",
+      "authorized": [
+        "10:00",
+        "11:00"
+      ]
+    }
+  },
+  {
+    "record": "accounting-2",
+    "availableFrom": 1,
+    "kind": "roster",
+    "payload": {
+      "shift": "V3",
+      "person": "I-94",
+      "authorized": [
+        "10:25",
+        "11:00"
+      ]
+    }
+  },
+  {
+    "record": "accounting-3",
+    "availableFrom": 2,
+    "kind": "claim",
+    "payload": {
+      "claim": "K81",
+      "person": "I-73",
+      "billed": [
+        "10:10",
+        "10:24"
+      ],
+      "status": "接受"
+    }
+  },
+  {
+    "record": "accounting-4",
+    "availableFrom": 2,
+    "kind": "claim",
+    "payload": {
+      "claim": "K82",
+      "person": "I-73",
+      "billed": [
+        "10:24",
+        "10:36"
+      ],
+      "status": "unknown"
+    }
+  },
+  {
+    "record": "accounting-5",
+    "availableFrom": 3,
+    "kind": "ruling",
+    "payload": {
+      "claim": "K81",
+      "payable": [
+        "10:12",
+        "10:24"
+      ],
+      "reason": "更正签到起点"
+    }
+  },
+  {
+    "record": "accounting-6",
+    "availableFrom": 4,
+    "kind": "claim",
+    "payload": {
+      "claim": "K82",
+      "person": "I-73",
+      "billed": [
+        "10:24",
+        "10:36"
+      ],
+      "status": "明确未入账"
+    }
+  }
+]
