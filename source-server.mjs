@@ -33,6 +33,20 @@ export async function start({ port = 0, host = '127.0.0.1', portal } = {}) {
         return;
       }
       if (portal && await portal(request, response, url, stage)) return;
+      if (request.method === 'GET' && url.pathname.startsWith('/posting/')) {
+        const id = url.pathname.split('/').at(-1);
+        const entries = sources.get('accounting').filter((event) => event.availableFrom <= stage && event.payload.claim === id);
+        const claim = entries.findLast((event) => event.kind === 'claim');
+        const ruling = entries.findLast((event) => event.kind === 'ruling');
+        if (claim?.payload.status === 'unknown') {
+          sendJson(response, 202, { claim: id, status: '已收件，逐项核销尚无结论' });
+        } else if (claim) {
+          sendJson(response, 200, { item: claim.payload, adjustment: ruling?.payload ?? null });
+        } else {
+          sendJson(response, 404, { claim: id, status: '未找到凭据' });
+        }
+        return;
+      }
       if (request.method !== 'GET') {
         sendJson(response, 405, { error: '来源仅支持读取' });
         return;

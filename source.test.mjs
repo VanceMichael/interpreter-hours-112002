@@ -54,3 +54,15 @@ test('资料在指定回放阶段从来源完整分页返回', async (t) => {
   assert.equal((await fetch(`${url}/source/missing`)).status, 404);
   t.diagnostic(`${index.sources.length} 处来源、${index.stages} 个阶段、${index.originals.length} 份原件`);
 });
+
+test('已核销的修订和另一项尚未确证分别可查询', async (t) => {
+  const { server, url } = await start();
+  t.after(() => new Promise((resolve) => server.close(resolve)));
+  await fetch(url + '/control?stage=3', { method: 'POST' });
+  const approved = await (await fetch(url + '/posting/K81')).json();
+  assert.deepEqual(approved.item.billed, ['10:10','10:24']);
+  assert.deepEqual(approved.adjustment.payable, ['10:12','10:24']);
+  assert.equal((await fetch(url + '/posting/K82')).status, 202);
+  await fetch(url + '/control?stage=4', { method: 'POST' });
+  assert.equal((await (await fetch(url + '/posting/K82')).json()).item.status, '明确未入账');
+});
